@@ -4,7 +4,7 @@ function buildLogo(dark: boolean) {
   const canvas = document.createElement("canvas");
   const scale = 3;
   canvas.width = 250 * scale;
-  canvas.height = 50 * scale;
+  canvas.height = 100 * scale;
   const ctx = canvas.getContext("2d")!;
 
   ctx.scale(scale, scale);
@@ -14,29 +14,29 @@ function buildLogo(dark: boolean) {
   const sub = dark ? "#888888" : "#999999";
 
   ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, 250, 50);
+  ctx.fillRect(0, 0, 250, 100);
 
   ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
   ctx.beginPath();
-  ctx.moveTo(10, 6);
-  ctx.lineTo(240, 6);
+  ctx.moveTo(10, 14);
+  ctx.lineTo(240, 14);
   ctx.stroke();
 
   ctx.fillStyle = fg;
-  ctx.font = "300 15px 'Cormorant', Georgia, serif";
+  ctx.font = "300 22px 'Cormorant', Georgia, serif";
   ctx.textAlign = "center";
-  ctx.fillText("ЦВЕТОЧНАЯ МАСТЕРСКАЯ", 125, 28);
+  ctx.fillText("ЦВЕТОЧНАЯ МАСТЕРСКАЯ", 125, 52);
 
   ctx.fillStyle = sub;
-  ctx.font = "300 6px 'Montserrat', sans-serif";
-  ctx.fillText("ДОСТАВКА В ОТРАДНОМ", 125, 40);
+  ctx.font = "300 9px 'Montserrat', sans-serif";
+  ctx.fillText("ДОСТАВКА В ОТРАДНОМ", 125, 72);
 
   ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
   ctx.beginPath();
-  ctx.moveTo(10, 46);
-  ctx.lineTo(240, 46);
+  ctx.moveTo(10, 86);
+  ctx.lineTo(240, 86);
   ctx.stroke();
 
   const link = document.createElement("a");
