@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function downloadLogo() {
+function buildLogo(dark: boolean) {
   const canvas = document.createElement("canvas");
   const scale = 3;
   canvas.width = 250 * scale;
@@ -9,26 +9,30 @@ function downloadLogo() {
 
   ctx.scale(scale, scale);
 
-  ctx.fillStyle = "#ffffff";
+  const bg = dark ? "#000000" : "#ffffff";
+  const fg = dark ? "#ffffff" : "#000000";
+  const sub = dark ? "#888888" : "#999999";
+
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, 250, 50);
 
-  ctx.strokeStyle = "#000000";
+  ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
   ctx.beginPath();
   ctx.moveTo(10, 6);
   ctx.lineTo(240, 6);
   ctx.stroke();
 
-  ctx.fillStyle = "#000000";
+  ctx.fillStyle = fg;
   ctx.font = "300 15px 'Cormorant', Georgia, serif";
   ctx.textAlign = "center";
   ctx.fillText("ЦВЕТОЧНАЯ МАСТЕРСКАЯ", 125, 28);
 
-  ctx.fillStyle = "#999999";
+  ctx.fillStyle = sub;
   ctx.font = "300 6px 'Montserrat', sans-serif";
   ctx.fillText("ДОСТАВКА В ОТРАДНОМ", 125, 40);
 
-  ctx.strokeStyle = "#000000";
+  ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
   ctx.beginPath();
   ctx.moveTo(10, 46);
@@ -36,7 +40,7 @@ function downloadLogo() {
   ctx.stroke();
 
   const link = document.createElement("a");
-  link.download = "logo.png";
+  link.download = dark ? "logo-dark.png" : "logo.png";
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
@@ -108,18 +112,28 @@ export default function Index() {
         />
       </div>
 
-      <button
-        onClick={downloadLogo}
-        className="font-montserrat text-black border border-black px-8 py-3 tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-colors duration-300"
+      <div
+        className="flex gap-4"
         style={{
-          fontSize: "0.65rem",
-          fontWeight: 400,
           opacity: visible ? 1 : 0,
-          transition: "opacity 1.2s ease 1.2s, background-color 0.3s, color 0.3s",
+          transition: "opacity 1.2s ease 1.2s",
         }}
       >
-        Скачать логотип PNG
-      </button>
+        <button
+          onClick={() => buildLogo(false)}
+          className="font-montserrat text-black border border-black px-6 py-3 tracking-[0.15em] uppercase hover:bg-black hover:text-white transition-colors duration-300"
+          style={{ fontSize: "0.6rem", fontWeight: 400 }}
+        >
+          Светлый PNG
+        </button>
+        <button
+          onClick={() => buildLogo(true)}
+          className="font-montserrat bg-black text-white border border-black px-6 py-3 tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-colors duration-300"
+          style={{ fontSize: "0.6rem", fontWeight: 400 }}
+        >
+          Тёмный PNG
+        </button>
+      </div>
     </div>
   );
 }
