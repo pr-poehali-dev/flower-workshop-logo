@@ -24,7 +24,7 @@ function buildLogo(dark: boolean) {
   ctx.stroke();
 
   ctx.fillStyle = fg;
-  ctx.font = "300 22px 'Cormorant', Georgia, serif";
+  ctx.font = "600 22px 'Cormorant', Georgia, serif";
   ctx.textAlign = "center";
   ctx.fillText("ЦВЕТОЧНАЯ МАСТЕРСКАЯ", 140, 52);
 
@@ -75,7 +75,7 @@ export default function Index() {
           className="font-cormorant text-center text-black"
           style={{
             fontSize: "clamp(1.6rem, 5vw, 3.2rem)",
-            fontWeight: 300,
+            fontWeight: 600,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
             lineHeight: 1.15,
