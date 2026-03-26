@@ -29,7 +29,7 @@ function buildLogo(dark: boolean) {
   ctx.fillText("ЦВЕТОЧНАЯ МАСТЕРСКАЯ", 140, 52);
 
   ctx.fillStyle = sub;
-  ctx.font = "300 9px 'Montserrat', sans-serif";
+  ctx.font = "600 9px 'Montserrat', sans-serif";
   ctx.fillText("ДОСТАВКА В ОТРАДНОМ", 140, 72);
 
   ctx.strokeStyle = fg;
@@ -96,7 +96,7 @@ export default function Index() {
           <div className="w-8 border-t border-gray-300" />
           <span
             className="font-montserrat text-gray-400 tracking-[0.3em] uppercase"
-            style={{ fontSize: "clamp(0.55rem, 1.5vw, 0.68rem)", fontWeight: 400 }}
+            style={{ fontSize: "clamp(0.55rem, 1.5vw, 0.68rem)", fontWeight: 600 }}
           >
             Доставка в Отрадном
           </span>
