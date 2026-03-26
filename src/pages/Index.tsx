@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function buildLogo(dark: boolean) {
   const canvas = document.createElement("canvas");
   const scale = 3;
-  canvas.width = 250 * scale;
+  canvas.width = 280 * scale;
   canvas.height = 100 * scale;
   const ctx = canvas.getContext("2d")!;
 
@@ -14,7 +14,7 @@ function buildLogo(dark: boolean) {
   const sub = dark ? "#888888" : "#999999";
 
   ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, 250, 100);
+  ctx.fillRect(0, 0, 280, 100);
 
   ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
@@ -26,11 +26,11 @@ function buildLogo(dark: boolean) {
   ctx.fillStyle = fg;
   ctx.font = "300 22px 'Cormorant', Georgia, serif";
   ctx.textAlign = "center";
-  ctx.fillText("ЦВЕТОЧНАЯ МАСТЕРСКАЯ", 125, 52);
+  ctx.fillText("ЦВЕТОЧНАЯ МАСТЕРСКАЯ", 140, 52);
 
   ctx.fillStyle = sub;
   ctx.font = "300 9px 'Montserrat', sans-serif";
-  ctx.fillText("ДОСТАВКА В ОТРАДНОМ", 125, 72);
+  ctx.fillText("ДОСТАВКА В ОТРАДНОМ", 140, 72);
 
   ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
