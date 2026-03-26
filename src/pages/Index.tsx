@@ -19,8 +19,8 @@ function buildLogo(dark: boolean) {
   ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
   ctx.beginPath();
-  ctx.moveTo(10, 14);
-  ctx.lineTo(240, 14);
+  ctx.moveTo(130, 14);
+  ctx.lineTo(150, 14);
   ctx.stroke();
 
   ctx.fillStyle = fg;
@@ -35,8 +35,8 @@ function buildLogo(dark: boolean) {
   ctx.strokeStyle = fg;
   ctx.lineWidth = 0.5;
   ctx.beginPath();
-  ctx.moveTo(10, 86);
-  ctx.lineTo(240, 86);
+  ctx.moveTo(130, 86);
+  ctx.lineTo(150, 86);
   ctx.stroke();
 
   const link = document.createElement("a");
